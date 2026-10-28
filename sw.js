@@ -66,13 +66,19 @@ self.addEventListener('fetch', event => {
 
       return response;
     } catch (error) {
-      if (event.request.mode === 'navigate') {
-        const page = await caches.match(
-          new URL('./index.html', self.registration.scope).href
-        );
+if (event.request.mode === 'navigate') {
+  const page = await caches.match(
+    new URL('./index.html', self.registration.scope).href
+  );
 
-        if (page) return page;
-      }
+  if (page) return page;
+
+  const home = await caches.match(
+    new URL('./', self.registration.scope).href
+  );
+
+  if (home) return home;
+}
 
       return new Response(
         'ไฟล์นี้ยังไม่ได้บันทึกไว้สำหรับออฟไลน์',
