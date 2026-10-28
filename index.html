@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Shanghai Trip — 5 Days</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 24px; font-family: Arial, sans-serif; font-size: 11px; color: #222; background: #fff; }
+  .day { margin: 0 0 26px; page-break-inside: avoid; }
+  .day-title { font: bold 14px Arial, sans-serif; margin: 0 0 9px; }
+  .day-title .weekday { color: #064A8A; }
+  .weekday.sat { color: #7B2CBF; }
+  .weekday.sun { color: #D62828; }
+  .weekday.mon { color: #B38B00; }
+  .weekday.tue { color: #E75480; }
+  table { border-collapse: collapse; width: auto; max-width: 100%; table-layout: auto; font: 11px Arial, sans-serif; }
+  th, td { border: 1px solid #bdbdbd; padding: 6px 8px; vertical-align: top; }
+  th { font-weight: normal; background: #f7f7f7; white-space: nowrap; text-align: left; }
+  td.time { white-space: nowrap; }
+  td.plan { min-width: 250px; }
+  td.image, th.image { min-width: 90px; width: 90px; }
+  tr.sight td { background: #FFF0D9; }
+  tr.meal td { background: #FFEEED; }
+  tr.luggage td { background: #D6FFE7; }
+  tr.travel td { background: #E8E8E8; }
+  .duration { font: bold 8px Arial, sans-serif; white-space: nowrap; }
+  sub { font-size: 70%; line-height: 0; }
+  .fare { font-weight: bold; font-style: italic; background: #fff; padding: 1px 3px; border-radius: 2px; white-space: nowrap; }
+  .metro, .walk, .didi, .maglev { display: inline-block; padding: 1px 4px; border-radius: 2px; white-space: nowrap; }
+  .metro { color: #111; }
+  .m1 { background: #E4002B; color: #fff; }
+  .m2 { background: #8CC220; color: #111; }
+  .m8 { background: #009B3A; color: #fff; }
+  .m10 { background: #C6A000; color: #111; }
+  .m11 { background: #87189D; color: #fff; }
+  .m12 { background: #007A9E; color: #fff; }
+  .m13 { background: #ECA154; color: #111; }
+  .m14 { background: #D4A900; color: #111; }
+  .walk { font: 9px Arial, sans-serif; background: #737373; color: #fff; }
+  .didi { background: #FD9153; color: #fff; }
+  .maglev { background: #008b9a; color: #fff; }
+  .rank { display: inline-block; padding: 2px 5px; border-radius: 2px; font-weight: bold; white-space: nowrap; margin-right: 3px; }
+  .rank.s { background: #C0FCFA; color: #222; }
+  .rank.a { background: #C2FCC0; color: #17352D; }
+  .rank.b { background: #FCFAC0; color: #26331B; }
+  .rank.c { background: #FCDCC0; color: #4A3A00; }
+  .rank.d { background: #D4D4D4; color: #252525; }
+  .sublist { margin: 4px 0 0 0; padding-left: 18px; }
+  .sublist li { margin: 2px 0; }
+  .meal-label { font-weight: normal; }
+  .unused { margin-top: 18px; max-width: 900px; }
+  .unused h3 { font: bold 12px Arial, sans-serif; margin: 0 0 8px; }
+  .unused-grid { display: grid; grid-template-columns: repeat(2, minmax(220px, max-content)); gap: 5px 22px; }
+  .unused-item { padding: 3px 0; }
+  .note { color: #555; font-size: 10px; margin-top: 6px; }
+  @media (max-width: 700px) {
+    body { margin: 12px; }
+    table { width: 100%; }
+    td.plan { min-width: 0; }
+    .unused-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { margin: 10mm; }
+    .day { page-break-inside: avoid; }
+    table { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<section class="day">
+<h2 class="day-title">Day 1 East Shanghai (<span class="weekday fri">Fri</span> 30th)</h2>
+<table>
+<thead><tr><th>เวลา</th><th>แพลน</th><th class="image">ภาพ</th></tr></thead>
+<tbody>
+<!-- Row 1: ตม. + ซื้อตั๋ว + เข้ารถไฟ -->
+<tr class="travel">
+  <td class="time">8:50–10:00</td>
+  <td class="plan">ตม + ซื้อตั๋ว + เข้ารถไฟ</td>
+  <td class="image"></td>
+</tr>
+
+<!-- Row 2: เดินทางไป People's Square -->
+<tr class="travel">
+  <td class="time"></td>
+  <td class="plan">
+    <span class="duration">1 hr 2<sub>min</sub></span>
+    <span class="fare">¥ 7</span>,
+    <span class="metro m2">M2</span> → People's Square
+    <br/>or<br/>
+    <span class="duration">36 <sub>min</sub></span>
+    <span class="fare">¥ 44</span>,
+    <span class="maglev">Maglev</span> → Longyang,
+    <span class="metro m2">M2</span> → People's Square
+  </td>
+  <td class="image"></td>
+</tr>
+
+<!-- Row 3: ฝากกระเป๋า -->
+<tr class="luggage">
+  <td class="time">11:05–11:30</td>
+  <td class="plan">ฝากกระเป๋า — People's Square</td>
+  <td class="image"></td>
+</tr>
+<tr class="meal"><td class="time">11:30–12:20</td><td class="plan">Lunch @ People's Square
+        <ul class="sublist">
+<li><span class="meal-label">Nonveg:</span> Jia Jia Tang Bao; Xiao Yang's Fried Dumpling; Lailai Snack Dumpling</li>
+<li><span class="meal-label">Halfveg:</span> Weixiangzhai; Shanghai Grandmother Restaurant; Eli Falafel</li>
+<li><span class="meal-label">Veg:</span> Gongdelin</li>
+</ul>
+        or Lunch @ Xintiandi — Veg: Ciguang Sushibu
+      </td><td class="image"></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">3 <sub>min</sub></span> <span class="fare">¥ 3</span>, <span class="metro m1">M1</span> → Site of First CPC</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">12:30–13:20</td><td class="plan"> Xintiandi</td><td class="image"><span class="rank a">A8</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">4 <sub>min</sub></span> <span class="fare">¥ 3</span>, <span class="metro m14">M14</span> → Yuyuan Station<br/><span class="duration">10 <sub>min</sub></span> <span class="walk">WALK</span> → Yuyuan Garden</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">13:40–14:40</td><td class="plan"> Yu Garden &amp; Yuyuan Bazaar (Chen Wang Miao Market)</td><td class="image"><span class="rank s">S4</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">20 <sub>min</sub></span> <span class="walk">WALK</span> → Yuyuan Station<br/><span class="duration">2 <sub>min</sub></span> <span class="fare">¥ 3</span>, <span class="metro m10">M10</span> → East Nanjing<br/><span class="duration">15 <sub>min</sub></span> <span class="walk">WALK</span> → Rockbund</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">15:30–17:30</td><td class="plan"> Rockbund →  Zhapu Bridge →  The Bund (via Waibaidu Bridge)</td><td class="image"><span class="rank b">B5</span><span class="rank d">D1</span><span class="rank s">S1</span></td></tr>
+<tr class="sight"><td class="time">17:30–20:45</td><td class="plan">หาอาหาร / หรือข้ามไปฝั่ง  Shanghai Tower</td><td class="image"><span class="rank s">S2</span></td></tr>
+<tr class="luggage"><td class="time">21:20</td><td class="plan">กลับมาเอากระเป๋าที่ locker แล้วไปเช็กอินโรงแรม</td><td class="image"></td></tr>
+</tbody>
+</table>
+</section>
+<section class="day">
+<h2 class="day-title">Day 2 West Shanghai (<span class="weekday sat">Sat</span> 31st)</h2>
+<table>
+<thead><tr><th>เวลา</th><th>แพลน</th><th class="image">ภาพ</th></tr></thead>
+<tbody>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">15 <sub>min</sub></span> <span class="walk">WALK</span> → North Xizang Road<br/><span class="duration">6 <sub>min</sub></span> <span class="metro m8">M8</span> → Qufu Road<br/><span class="duration">25 <sub>min</sub></span> <span class="metro m12">M12</span> → Longhua<br/><span class="duration">7 <sub>min</sub></span> <span class="walk">WALK</span> → Longhua Temple</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">8:00–8:30</td><td class="plan"> Longhua Temple</td><td class="image"><span class="rank b">B3</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">15 <sub>min</sub></span> <span class="walk">WALK</span> → Longhua<br/><span class="duration">8 <sub>min</sub></span> <span class="metro m11">M11</span> → Xujiahui<br/><span class="duration">15 <sub>min</sub></span> <span class="walk">WALK</span> → St. Ignatius Cathedral</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">9:10–9:40</td><td class="plan"> St. Ignatius Cathedral / Zikawei</td><td class="image"><span class="rank c">C5</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">30 <sub>min</sub></span> <span class="walk">WALK</span> → Wukang Mansion + Song Qingling Guju</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">10:10–10:40</td><td class="plan"> Wukang Mansion + Song Qingling Guju</td><td class="image"><span class="rank s">S7</span></td></tr>
+<tr class="meal"><td class="time">10:40–11:40</td><td class="plan">Lao Ji / Shi Jiujia</td><td class="image"></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">30 <sub>min</sub></span> <span class="walk">WALK</span> → Anfu Road</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">12:10–13:10</td><td class="plan"> Anfu Road</td><td class="image"><span class="rank b">B6</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">20 <sub>min</sub></span> <span class="walk">WALK</span> → Jing'an Temple</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">13:30–14:20</td><td class="plan"> Jing'an Temple</td><td class="image"><span class="rank a">A5</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">5 <sub>min</sub></span> <span class="walk">WALK</span> → Jing'an Temple<br/><span class="duration">3 <sub>min</sub></span> <span class="fare">¥ 3</span>, <span class="metro m2">M2</span> → West Nanjing Road<br/><span class="duration">10 <sub>min</sub></span> <span class="walk">WALK</span> → Zhang Yuan</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">14:45–15:30</td><td class="plan">Zhang Yuan</td><td class="image"></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">8 <sub>min</sub></span> <span class="didi">DiDi</span> → Jade Buddha Temple<br/>or<br/><span class="duration">10 <sub>min</sub></span> <span class="walk">WALK</span> → West Nanjing Road<br/><span class="duration">10 <sub>min</sub></span> <span class="metro m13">M13</span> → Jiangning Road<br/><span class="duration">10 <sub>min</sub></span> <span class="walk">WALK</span> → Jade Buddha Temple</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">15:40–16:20</td><td class="plan"> Jade Buddha Temple</td><td class="image"><span class="rank b">B1</span></td></tr>
+<tr class="travel"><td class="time"></td><td class="plan"><span class="duration">15 <sub>min</sub></span> <span class="walk">WALK</span> → 1,000 Trees</td><td class="image"></td></tr>
+<tr class="sight"><td class="time">16:45–17:10</td><td class="plan"> Tian An 1,000 Trees</td><td class="image"><span class="rank a">A2</span></td></tr>
+</tbody>
+</table>
+<div class="unused">
+<h3>สถานที่ในลิสต์แรงค์ที่ยังไม่ได้อยู่ในแพลน (รวมไว้ด้านล่าง Day 2)</h3>
+<div class="unused-grid">
+<div class="unused-item"><span class="rank s">S3</span> Shanghai Disneyland</div>
+<div class="unused-item"><span class="rank s">S5</span> Oriental Pearl TV Tower</div>
+<div class="unused-item"><span class="rank s">S6</span> Nanjing Road</div>
+<div class="unused-item"><span class="rank a">A1</span> Lujiazui Financial District</div>
+<div class="unused-item"><span class="rank a">A3</span> Huangpu River Cruise</div>
+<div class="unused-item"><span class="rank a">A4</span> Shanghai Museum East</div>
+<div class="unused-item"><span class="rank a">A6</span> Tianzifang</div>
+<div class="unused-item"><span class="rank a">A7</span> Zhujiajiao Ancient Town</div>
+<div class="unused-item"><span class="rank a">A9</span> Maglev Train Experience</div>
+<div class="unused-item"><span class="rank a">A10</span> Shanghai World Financial Center (SWFC)</div>
+<div class="unused-item"><span class="rank b">B2</span> M50 Creative Park</div>
+<div class="unused-item"><span class="rank b">B4</span> The Bund Sightseeing Tunnel</div>
+<div class="unused-item"><span class="rank b">B7</span> Shanghai Natural History Museum</div>
+<div class="unused-item"><span class="rank b">B8</span> Jin Mao Tower</div>
+<div class="unused-item"><span class="rank c">C1</span> Qibao Ancient Town</div>
+<div class="unused-item"><span class="rank c">C2</span> Shanghai Haichang Ocean Park</div>
+<div class="unused-item"><span class="rank c">C3</span> China Art Museum</div>
+<div class="unused-item"><span class="rank c">C4</span> Shanghai Wild Animal Park</div>
+<div class="unused-item"><span class="rank c">C6</span> Shanghai Flower Port</div>
+<div class="unused-item"><span class="rank c">C7</span> INS Land</div>
+<div class="unused-item"><span class="rank d">D2</span> North Bund Green Land</div>
+<div class="unused-item"><span class="rank d">D3</span> Shanghai Jewish Refugees Museum</div>
+<div class="unused-item"><span class="rank d">D4</span> Shanghai Botanical Garden</div>
+<div class="unused-item"><span class="rank d">D5</span> L+Snow Indoor Skiing</div>
+<div class="unused-item"><span class="rank d">D6</span> Shanghai Circus World</div>
+<div class="unused-item"><span class="rank d">D7</span> Shanghai Confucian Temple</div>
+<div class="unused-item"><span class="rank d">D8</span> Yangpu Bridge Waterfront</div>
+</div>
+<p class="note">หมายเหตุ: รายการที่ไม่มีแรงค์ เช่น Site of First CPC, Song Qingling Guju และ Zhang Yuan คงชื่อไว้ตามแพลนเดิมโดยไม่กำหนดแรงค์เพิ่ม</p>
+</div>
+</section>
+
+<section class="day">
+<h2 class="day-title">Day 3 Hangzhou (<span class="weekday sun">Sun</span> 1st)</h2>
+<table>
+<thead><tr><th>เวลา</th><th>แพลน</th><th class="image">ภาพ</th></tr></thead>
+<tbody>
+
+<tr class="travel">
+<td class="time">07:30–08:15</td>
+<td class="plan">
+<span class="duration">35–45 <sub>min</sub></span>
+<span class="fare">¥50–70/คัน</span>,
+<span class="didi">DiDi / Taxi</span> → Lingyin Temple (วัดหลิงอิน)
+<br/>จาก Hangzhou East Station (杭州东站)
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">08:15–10:15</td>
+<td class="plan">
+Lingyin Temple (วัดหลิงอิน) + Feilai Peak (เฟยไหลเฟิง)
+<br/><span class="duration">2 <sub>hr</sub></span> · ค่าเข้าพื้นที่ <span class="fare">¥0*</span>
+<br/><span class="note">*ต้องจองล่วงหน้าและตรวจสอบเงื่อนไขล่าสุดก่อนเดินทาง</span>
+</td>
+<td class="image"><span class="rank s">S</span></td>
+</tr>
+
+<tr class="travel">
+<td class="time">10:15–10:45</td>
+<td class="plan">
+<span class="duration">15–30 <sub>min</sub></span>
+<span class="fare">¥25–40/คัน</span>,
+<span class="didi">DiDi / Taxi</span> → Broken Bridge
+<br/>or<br/>
+<span class="duration">30–45 <sub>min</sub></span>
+<span class="fare">¥2–5/คน</span>,
+รถเมล์ → Broken Bridge
+<br/><span class="note">รถเมล์ประหยัดกว่า แต่เวลาอาจใกล้เคียงกันเมื่อรถติด</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">10:45–11:30</td>
+<td class="plan">
+Broken Bridge (สะพานขาด) + ถ่ายรูปวิวทะเลสาบซีหู
+<br/><span class="duration">45 <sub>min</sub></span> · <span class="fare">ฟรี</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="travel">
+<td class="time">11:30–12:00</td>
+<td class="plan">
+<span class="duration">30 <sub>min</sub></span>
+<span class="walk">WALK</span> → Zhongshan Park Pier (ท่าเรือสวนจงซาน)
+<br/>เดินเลียบทะเลสาบซีหู · <span class="fare">¥0</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">12:00–13:30</td>
+<td class="plan">
+นั่งเรือชม Three Pools Mirroring the Moon (三潭印月) → ลงฝั่ง Huagang
+<br/><span class="duration">60–90 <sub>min</sub></span> · <span class="fare">¥55–70/คน</span>
+<br/><span class="note">ตรวจสอบเส้นทางเรือ ท่าเรือ และตั๋วก่อนซื้อ</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">13:30–14:00</td>
+<td class="plan">
+Viewing Fish at Flower Harbor (花港观鱼)
+<br/>เดินชมสวนระหว่างทางไปเจดีย์เหลยเฟิง
+<br/><span class="duration">30 <sub>min</sub></span> · <span class="fare">ฟรี</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">14:00–15:15</td>
+<td class="plan">
+Leifeng Pagoda (เจดีย์เหลยเฟิง)
+<br/><span class="duration">1 hr 15 <sub>min</sub></span> · <span class="fare">ประมาณ ¥40/คน</span>
+</td>
+<td class="image"><span class="rank a">A</span></td>
+</tr>
+
+<tr class="travel">
+<td class="time">15:15–15:30</td>
+<td class="plan">
+<span class="duration">5–15 <sub>min</sub></span>
+<span class="walk">WALK</span> → Jingci Temple (วัดจิ้งซี)
+<br/><span class="fare">¥0</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="sight">
+<td class="time">15:30–16:30</td>
+<td class="plan">
+Jingci Temple (วัดจิ้งซี)
+<br/><span class="duration">1 <sub>hr</sub></span> · <span class="fare">ประมาณ ¥10/คน</span>
+<br/><span class="note">ควรเข้าก่อนเวลาปิดประมาณ 17:00 น.</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="travel">
+<td class="time">16:30–17:00</td>
+<td class="plan">
+<span class="duration">15–30 <sub>min</sub></span>
+<span class="fare">¥20–35/คัน</span>,
+<span class="didi">DiDi / Taxi</span> → Hefang Street
+<br/>or<br/>
+<span class="duration">25–40 <sub>min</sub></span>
+<span class="fare">¥2–5/คน</span>,
+รถเมล์ → Hefang Street
+<br/><span class="note">DiDi เร็วกว่าโดยประมาณ 10 นาที แต่รถเมล์คุ้มกว่าหากไม่ต้องรอนาน</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="meal">
+<td class="time">17:00–18:45</td>
+<td class="plan">
+Hefang Street (ถนนโบราณเหอฝางเจี๋ย)
+<br/>เดินเที่ยว กินมื้อเย็น และซื้อของฝาก
+<br/><span class="duration">1 hr 45 <sub>min</sub></span> · <span class="fare">เข้าฟรี</span>
+<br/><span class="note">ค่าอาหารแยกต่างหาก</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="travel">
+<td class="time">18:45–19:15</td>
+<td class="plan">
+<span class="duration">15–25 <sub>min</sub></span>
+<span class="fare">¥2–4/คน</span>,
+Metro → Hangzhou Railway Station (杭州站)
+<br/>or<br/>
+<span class="duration">15–30 <sub>min</sub></span>
+<span class="fare">¥20–35/คัน</span>,
+<span class="didi">DiDi / Taxi</span> → Hangzhou Railway Station
+<br/><span class="note">แนะนำ Metro เพื่อเลี่ยงรถติด เลือกสถานีใกล้จุดออกจริง เช่น Wushan Square หรือ Chengzhan</span>
+</td>
+<td class="image"></td>
+</tr>
+
+<tr class="travel">
+<td class="time">19:15–20:00</td>
+<td class="plan">
+ถึงสถานี ตรวจชานชาลา และเตรียมขึ้นรถไฟ
+<br/><span class="fare">รถไฟออก 20:00 น.</span>
+</td>
+<td class="image"></td>
+</tr>
+
+</tbody>
+</table>
+</section>
+<section class="day">
+<h2 class="day-title">Day 4 Disneyland (<span class="weekday mon">Mon</span> 2nd)</h2>
+<table><thead><tr><th>เวลา</th><th>แพลน</th><th class="image">ภาพ</th></tr></thead><tbody><tr><td class="time"></td><td class="plan"></td><td class="image"></td></tr></tbody></table>
+</section>
+<section class="day">
+<h2 class="day-title">Day 5 Departure (<span class="weekday tue">Tue</span> 3rd)</h2>
+<table><thead><tr><th>เวลา</th><th>แพลน</th><th class="image">ภาพ</th></tr></thead><tbody><tr><td class="time"></td><td class="plan"></td><td class="image"></td></tr></tbody></table>
+</section>
+
+<script>
+document.querySelectorAll('tr.travel').forEach(row => {
+  const timeCell = row.querySelector('td.time');
+  const planCell = row.querySelector('td.plan');
+
+  if (!timeCell || !planCell) return;
+
+  const durations = [...planCell.querySelectorAll('.duration')];
+
+  durations.forEach(duration => {
+    const br = document.createElement('br');
+    timeCell.appendChild(duration.cloneNode(true));
+    timeCell.appendChild(br);
+    duration.remove();
+  });
+
+  if (timeCell.lastElementChild?.tagName === 'BR') {
+    timeCell.lastElementChild.remove();
+  }
+});
+
+document.head.insertAdjacentHTML('beforeend', `
+<style>
+  td.time .duration {
+    display: block;
+    text-align: right;
+    font: bold 8px Arial, sans-serif;
+    white-space: nowrap;
+  }
+</style>
+`);
+</script>
+
+<script>
+(() => {
+  // หา Day 3: Hangzhou
+  const days = [...document.querySelectorAll('.day')];
+  const day3 = days.find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3) return;
+
+  // Ranking ของสถานที่ในแพลน Day 3
+  const rankings = {
+    'Lingyin Temple': ['S2'],
+    'Broken Bridge': ['S1'],
+    'Leifeng Pagoda': ['S3'],
+    'Hefang Street': ['A2'],
+    'Jingci Temple': ['D3']
+  };
+
+  // เติม Ranking ลงช่องภาพของแถวสถานที่
+  day3.querySelectorAll('tr.sight').forEach(row => {
+    const plan = row.querySelector('.plan');
+    const image = row.querySelector('.image');
+    if (!plan || !image || image.querySelector('.rank')) return;
+
+    const name = plan.textContent;
+
+    for (const [keyword, ranks] of Object.entries(rankings)) {
+      if (name.includes(keyword)) {
+        ranks.forEach(rank => {
+          const badge = document.createElement('span');
+          badge.className = 'rank ' + rank[0].toLowerCase();
+          badge.textContent = rank;
+          image.appendChild(badge);
+        });
+        break;
+      }
+    }
+  });
+
+  // รายการ Ranking ที่เหลือ
+  const remaining = [
+    ['a', 'A1', 'Hangzhou Songcheng Eternal Love Show'],
+    ['a', 'A3', 'Grand Canal & Gongchen Bridge'],
+    ['a', 'A4', 'Xixi National Wetland Park'],
+    ['b', 'B1', 'Former Residence of Hu Xueyan'],
+    ['b', 'B2', 'Gu Shan'],
+    ['b', 'B3', 'Xiaohe Straight Street'],
+    ['b', 'B4', 'China National Silk Museum'],
+    ['c', 'C1', 'Six Harmonies Pagoda'],
+    ['c', 'C2', 'Hangzhou Botanical Garden'],
+    ['c', 'C3', 'Hu Qing Yu Tang Museum'],
+    ['c', 'C4', 'Beishan Road'],
+    ['d', 'D1', 'Hubin IN77'],
+    ['d', 'D2', 'Hangzhou City Balcony / Qiantang New City'],
+    ['d', 'D4', 'Hangzhou Olympic Sports Centre']
+  ];
+
+  const section = document.createElement('div');
+  section.className = 'unused';
+  section.innerHTML = `
+    <h3>สถานที่ในลิสต์แรงค์ที่ยังไม่ได้อยู่ในแพลน (Hangzhou)</h3>
+    <div class="unused-grid"></div>
+    <p class="note">
+      หมายเหตุ: รายการนี้แยกสถานที่ที่ยังไม่ได้อยู่ในแพลน
+      ออกจากสถานที่ที่แสดง Ranking ในตารางแล้ว
+    </p>
+  `;
+
+  const grid = section.querySelector('.unused-grid');
+
+  remaining.forEach(([level, rank, name]) => {
+    const item = document.createElement('div');
+    item.className = 'unused-item';
+
+    const badge = document.createElement('span');
+    badge.className = `rank ${level}`;
+    badge.textContent = rank;
+
+    item.append(badge, document.createTextNode(' ' + name));
+    grid.appendChild(item);
+  });
+
+  day3.appendChild(section);
+})();
+</script>
+</body>
+</html>
+
+<script>
+(() => {
+  const days = [...document.querySelectorAll('.day')];
+  const day3 = days.find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3) return;
+
+  const rankings = [
+    { keyword: 'Lingyin Temple', rank: 'S2' },
+    { keyword: 'Feilai Peak', rank: 'S2' },
+    { keyword: 'Broken Bridge', rank: 'S1' },
+    { keyword: 'Leifeng Pagoda', rank: 'S3' },
+    { keyword: 'Hefang Street', rank: 'A2' },
+    { keyword: 'Jingci Temple', rank: 'D3' }
+  ];
+
+  day3.querySelectorAll('tr.sight').forEach(row => {
+    const plan = row.querySelector('.plan');
+    const image = row.querySelector('td.image');
+
+    if (!plan || !image) return;
+
+    const text = plan.textContent;
+
+    const matches = rankings.filter(item =>
+      text.includes(item.keyword)
+    );
+
+    if (!matches.length) return;
+
+    // ลบแรงก์เดิมที่ไม่มีเลขหรือเลขไม่ถูกต้อง
+    image.querySelectorAll('.rank').forEach(el => el.remove());
+
+    // ป้องกันแรงก์ซ้ำ
+    [...new Set(matches.map(item => item.rank))].forEach(rank => {
+      const badge = document.createElement('span');
+      badge.className = 'rank ' + rank[0].toLowerCase();
+      badge.textContent = rank;
+      image.appendChild(badge);
+    });
+  });
+})();
+</script>
+</body>
+</html>
+
+<script>
+document.querySelectorAll('.day').forEach(day => {
+  if (!day.querySelector('.day-title')?.textContent.includes('Hangzhou')) return;
+
+  day.querySelectorAll('tr.meal').forEach(row => {
+    if (!row.querySelector('.plan')?.textContent.includes('Hefang Street')) return;
+
+    const image = row.querySelector('td.image');
+    if (!image || image.textContent.includes('A2')) return;
+
+    const badge = document.createElement('span');
+    badge.className = 'rank a';
+    badge.textContent = 'A2';
+    image.appendChild(badge);
+  });
+});
+</script>
+</body>
+</html>
+
+<script>
+(() => {
+  // แก้เฉพาะ Day 3: Hangzhou
+  const day3 = [...document.querySelectorAll('.day')].find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3) return;
+
+  // ลบเวลาเริ่มต้น-สิ้นสุดเฉพาะแถวเดินทาง
+  day3.querySelectorAll('tr.travel td.time').forEach(cell => {
+    [...cell.childNodes].forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = node.textContent.replace(
+          /\b\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}\b/g,
+          ''
+        );
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
+</body>
+</html>
+
+<script>
+(() => {
+  const day = [...document.querySelectorAll('.day')].find(d =>
+    d.querySelector('.day-title')?.textContent.includes('Disneyland')
+  );
+
+  if (!day) return;
+
+  const tbody = day.querySelector('tbody');
+  if (!tbody || tbody.dataset.filled === 'yes') return;
+
+  tbody.dataset.filled = 'yes';
+  tbody.innerHTML = '';
+
+  const rides = [
+    ['07:30–09:00','เข้าสวนสนุก → Zootopia: Hot Pursuit','เข้าโซน Zootopia เป็นอันดับแรก','s','S3'],
+    ['09:00–10:15','TRON Lightcycle Power Run','หากคิว Zootopia หรือ TRON ต่างกันมาก สามารถสลับลำดับได้','s','S2'],
+    ['10:15–11:30','Seven Dwarfs Mine Train','หากคิวเกิน 75 นาที ให้ข้ามไป Soaring ก่อน','a','A1'],
+    ['11:30–12:45','Soaring Over the Horizon','หากคิวเกิน 90 นาที พิจารณา Premier Access','s','S4'],
+    ['12:45–13:45','Pirates of the Caribbean: Battle for the Sunken Treasure','เครื่องเล่นเด่นของ Treasure Cove','s','S1'],
+    ['13:45–14:30','Peter Pan’s Flight','ถ้าคิวเกิน 40 นาที ให้ข้ามไป Voyage to the Crystal Grotto ก่อน','a','A3'],
+    ['14:30–15:00','Voyage to the Crystal Grotto','','b','B2'],
+    ['15:00–16:00','Roaring Rapids','เตรียมเสื้อกันฝนหรือถุงกันน้ำสำหรับโทรศัพท์','a','A2'],
+    ['16:00–16:45','Buzz Lightyear Planet Rescue','ถ้าคิวไม่เกิน 20 นาที อาจเล่น Jet Packs ต่อได้','b','B1'],
+    ['16:45–18:15','Rex’s Racer และเครื่องเล่นใน Toy Story Land','เลือก Slinky Dog Spin หรือ Woody’s Roundup เพิ่มตามคิว','b','B3'],
+    ['18:15–19:15','Dinner & Rest','เลือกร้านใกล้โซนที่อยู่ และเช็กคิวในแอป','meal',''],
+    ['19:15–20:15','เก็บเครื่องเล่นที่คิวสั้น','Winnie the Pooh / Hunny Pot Spin / Dumbo / Fantasia Carousel','d','D1–D4'],
+    ['20:15–22:00','โชว์กลางคืนและเครื่องเล่นรอบสุดท้าย','ตรวจสอบเวลาแสดงจริงในแอปก่อน','s','']
+  ];
+
+  rides.forEach(([time,name,note,level,rank]) => {
+    const row = document.createElement('tr');
+    row.className = level === 'meal' ? 'meal' : 'sight';
+
+    const timeCell = document.createElement('td');
+    timeCell.className = 'time';
+    timeCell.textContent = time;
+
+    const planCell = document.createElement('td');
+    planCell.className = 'plan';
+    planCell.append(document.createTextNode(name));
+
+    if (note) {
+      const br = document.createElement('br');
+      const detail = document.createElement('span');
+      detail.className = 'note';
+      detail.textContent = note;
+      planCell.append(br, detail);
+    }
+
+    const imageCell = document.createElement('td');
+    imageCell.className = 'image';
+
+    if (rank) {
+      const badge = document.createElement('span');
+      badge.className = 'rank ' + level;
+      badge.textContent = rank;
+      imageCell.appendChild(badge);
+    }
+
+    row.append(timeCell, planCell, imageCell);
+    tbody.appendChild(row);
+  });
+
+  const note = document.createElement('p');
+  note.className = 'note';
+  note.textContent =
+    'เวลาเปิดและเวลาโชว์เป็นข้อมูลประมาณการ โปรดตรวจสอบปฏิทินและแอป Shanghai Disney Resort ก่อนเดินทาง';
+  day.appendChild(note);
+})();
+</script>
+
+<div class="unused">
+  <h3>เครื่องเล่นแรงก์ที่ยังไม่ได้อยู่ในแพลน (Disneyland)</h3>
+  <div class="unused-grid">
+    <div class="unused-item"><span class="rank c">C1</span> Slinky Dog Spin</div>
+    <div class="unused-item"><span class="rank c">C2</span> Woody’s Roundup</div>
+    <div class="unused-item"><span class="rank c">C3</span> Jet Packs</div>
+    <div class="unused-item"><span class="rank c">C4</span> Camp Discovery Challenge Trails</div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const day5 = [...document.querySelectorAll('.day')].find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Departure')
+  );
+
+  if (!day5) return;
+
+  const tbody = day5.querySelector('tbody');
+  if (!tbody || tbody.dataset.filled === 'yes') return;
+
+  tbody.dataset.filled = 'yes';
+  tbody.innerHTML = '';
+
+  const plans = [
+    {
+      time: '06:45',
+      plan: 'ออกจากโรงแรม เดินไปสถานี Metro ที่ใกล้ที่สุด',
+      type: 'travel'
+    },
+    {
+      time: 'ประมาณ 07:00',
+      plan: 'ขึ้น Metro ไป Pudong Airport Terminal 1&2 Station',
+      note: 'ตรวจสอบเส้นทาง จุดเปลี่ยนสาย และเที่ยวรถช่วงเช้าจากแอปก่อนเดินทาง',
+      type: 'travel'
+    },
+    {
+      time: '08:15–08:30',
+      plan: 'ถึงสถานีสนามบิน แล้วเดินตามป้ายไป Terminal 2',
+      type: 'travel'
+    },
+    {
+      time: '08:30–09:00',
+      plan: 'เช็กอินออนไลน์ล่วงหน้าหากสายการบินรองรับ และจัดการบัตรขึ้นเครื่อง',
+      type: 'luggage'
+    },
+    {
+      time: '09:00–10:30',
+      plan: 'ผ่านจุดตรวจความปลอดภัยและตรวจคนเข้าเมือง',
+      type: 'travel'
+    },
+    {
+      time: 'ก่อน 11:00',
+      plan: 'อยู่ในเขตผู้โดยสารขาออก และเดินไปยังเกต',
+      type: 'sight'
+    }
+  ];
+
+  plans.forEach(item => {
+    const row = document.createElement('tr');
+    row.className = item.type;
+
+    const time = document.createElement('td');
+    time.className = 'time';
+    time.textContent = item.time;
+
+    const plan = document.createElement('td');
+    plan.className = 'plan';
+    plan.appendChild(document.createTextNode(item.plan));
+
+    if (item.note) {
+      const br = document.createElement('br');
+      const note = document.createElement('span');
+      note.className = 'note';
+      note.textContent = item.note;
+      plan.append(br, note);
+    }
+
+    const image = document.createElement('td');
+    image.className = 'image';
+
+    row.append(time, plan, image);
+    tbody.appendChild(row);
+  });
+})();
+</script>
+</body>
+</html>
+<script>
+(() => {
+  const icon = document.createElement('link');
+  icon.rel = 'apple-touch-icon';
+  icon.href = 'panda.png';
+  document.head.appendChild(icon);
+})();
+</script>
