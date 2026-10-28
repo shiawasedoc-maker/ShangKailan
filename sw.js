@@ -5,12 +5,10 @@ self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
 
-    const urls = [
-      './',
-      './index.html',
-      './panda.png',
-      './kailan.png'
-    ];
+const urls = [
+  './',
+  './index.html'
+];
 
     await Promise.all(
       urls.map(async url => {
