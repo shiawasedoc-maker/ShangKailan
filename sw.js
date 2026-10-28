@@ -1,13 +1,29 @@
 
-const CACHE_NAME = 'shangkailan-v2';
+const CACHE_NAME = 'shangkailan-v3';
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    const page = new URL('./', self.registration.scope);
 
-    await cache.add(page.href);
-    await cache.add(new URL('index.html', page).href);
+    const urls = [
+      './',
+      './index.html',
+      './panda.png',
+      './kailan.png'
+    ];
+
+    await Promise.all(
+      urls.map(async url => {
+        try {
+          const response = await fetch(url, { cache: 'reload' });
+          if (response.ok) {
+            await cache.put(url, response);
+          }
+        } catch (error) {
+          console.log('ยังแคชไฟล์ไม่ได้:', url);
+        }
+      })
+    );
 
     await self.skipWaiting();
   })());
@@ -19,8 +35,10 @@ self.addEventListener('activate', event => {
 
     await Promise.all(
       keys
-        .filter(key => key.startsWith('shangkailan-') &&
-                       key !== CACHE_NAME)
+        .filter(key =>
+          key.startsWith('shangkailan-') &&
+          key !== CACHE_NAME
+        )
         .map(key => caches.delete(key))
     );
 
@@ -49,19 +67,24 @@ self.addEventListener('fetch', event => {
       }
 
       return response;
-    } catch {
-      const page = await caches.match(
-        new URL('./', self.registration.scope).href
-      );
+    } catch (error) {
+      if (event.request.mode === 'navigate') {
+        const page = await caches.match(
+          new URL('./index.html', self.registration.scope).href
+        );
 
-      if (page && event.request.mode === 'navigate') {
-        return page;
+        if (page) return page;
       }
 
-      return new Response('เนื้อหานี้ยังไม่ได้บันทึกไว้สำหรับออฟไลน์', {
-        status: 503,
-        headers: { 'Content-Type': 'text/plain; charset=utf-8' }
-      });
+      return new Response(
+        'ไฟล์นี้ยังไม่ได้บันทึกไว้สำหรับออฟไลน์',
+        {
+          status: 503,
+          headers: {
+            'Content-Type': 'text/plain; charset=utf-8'
+          }
+        }
+      );
     }
   })());
 });
