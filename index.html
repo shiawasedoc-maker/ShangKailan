@@ -1538,3 +1538,272 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
+<style>
+/* Day 3: Swipe between Original and Alternative */
+.day3-swipe {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  margin: 12px 0;
+}
+
+.day3-swipe-track {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.day3-swipe-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
+  padding: 0 1px 8px;
+}
+
+/* Same typography as the other itinerary tables */
+.day3-swipe-slide,
+.day3-swipe-slide table,
+.day3-swipe-slide th,
+.day3-swipe-slide td {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.day3-swipe-slide table {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  table-layout: auto !important;
+  border-collapse: collapse;
+}
+
+.day3-swipe-slide th,
+.day3-swipe-slide td {
+  padding: 6px 8px;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.day3-swipe-slide td.time {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.day3-swipe-slide td.plan {
+  min-width: 0 !important;
+  width: auto;
+  overflow-wrap: anywhere;
+}
+
+.day3-swipe-slide td.image,
+.day3-swipe-slide th.image {
+  width: 90px;
+  min-width: 90px;
+}
+
+.day3-swipe-slide .duration {
+  font-size: 8px;
+}
+
+.day3-swipe-slide .note {
+  font-size: 10px;
+}
+
+.day3-swipe-slide .unused h3 {
+  font-size: 12px;
+}
+
+/* Slide navigation */
+.day3-swipe-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 8px 0 12px;
+  font: 11px Arial, sans-serif;
+}
+
+.day3-swipe-nav button {
+  font: inherit;
+  padding: 7px 12px;
+  color: #222;
+  background: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.day3-swipe-nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.day3-swipe-status {
+  color: #555;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .day3-swipe-slide td.image,
+  .day3-swipe-slide th.image {
+    width: 54px;
+    min-width: 54px;
+    padding: 5px 3px;
+  }
+
+  .day3-swipe-slide th,
+  .day3-swipe-slide td {
+    padding: 6px 5px;
+  }
+}
+
+@media print {
+  .day3-swipe {
+    overflow: visible;
+  }
+
+  .day3-swipe-track {
+    display: block;
+  }
+
+  .day3-swipe-slide {
+    width: 100%;
+    margin-bottom: 16px;
+    break-inside: avoid;
+  }
+
+  .day3-swipe-nav {
+    display: none;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const day3 = [...document.querySelectorAll('.day')]
+    .find(day =>
+      day.querySelector('.day-title')
+        ?.textContent.includes('Hangzhou')
+    );
+
+  if (!day3 || day3.dataset.swipeReady === 'yes') return;
+
+  const altWrap = day3.querySelector('.day3-alt-wrap');
+  const altTable = altWrap?.querySelector('table');
+
+  const originalTable = [...day3.querySelectorAll('table')]
+    .find(table =>
+      !table.closest('.day3-alt-wrap') &&
+      !table.closest('.day3-swipe')
+    );
+
+  // Don't change the page if either table is missing.
+  if (!originalTable || !altTable) return;
+
+  day3.dataset.swipeReady = 'yes';
+
+  // Create the swipe container.
+  const viewport = document.createElement('div');
+  viewport.className = 'day3-swipe';
+
+  const track = document.createElement('div');
+  track.className = 'day3-swipe-track';
+
+  const originalSlide = document.createElement('div');
+  originalSlide.className = 'day3-swipe-slide';
+
+  const alternativeSlide = document.createElement('div');
+  alternativeSlide.className = 'day3-swipe-slide';
+
+  // Preserve the original table and its existing contents.
+  originalTable.parentNode.insertBefore(viewport, originalTable);
+  originalSlide.appendChild(originalTable);
+
+  // Move the alternative heading and note into slide 2.
+  const altSection = altWrap.parentElement;
+
+  if (altSection) {
+    const heading = [...altSection.children].find(el =>
+      el.classList.contains('unused')
+    );
+
+    if (heading) alternativeSlide.appendChild(heading);
+  }
+
+  alternativeSlide.appendChild(altWrap);
+
+  // Move the alternative plan's explanatory note, if present.
+  if (altSection) {
+    const trailingNote = [...altSection.children].find(el =>
+      el.matches('p.note')
+    );
+
+    if (trailingNote) alternativeSlide.appendChild(trailingNote);
+  }
+
+  // Assemble the two slides.
+  track.append(originalSlide, alternativeSlide);
+  viewport.appendChild(track);
+
+  const nav = document.createElement('div');
+  nav.className = 'day3-swipe-nav';
+
+  const prev = document.createElement('button');
+  prev.type = 'button';
+  prev.textContent = '← Original';
+
+  const status = document.createElement('span');
+  status.className = 'day3-swipe-status';
+  status.textContent = '1 / 2';
+
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.textContent = 'Alternative →';
+
+  nav.append(prev, status, next);
+
+  viewport.parentNode.insertBefore(nav, viewport);
+  viewport.parentNode.insertBefore(
+    viewport,
+    nav.nextSibling
+  );
+
+  function goTo(index) {
+    const target = index === 0
+      ? originalSlide
+      : alternativeSlide;
+
+    viewport.scrollTo({
+      left: target.offsetLeft - track.offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+
+  prev.addEventListener('click', () => goTo(0));
+  next.addEventListener('click', () => goTo(1));
+
+  function updateNavigation() {
+    const index =
+      viewport.scrollLeft >= viewport.clientWidth * 0.5 ? 1 : 0;
+
+    status.textContent = `${index + 1} / 2`;
+    prev.disabled = index === 0;
+    next.disabled = index === 1;
+  }
+
+  viewport.addEventListener('scroll', updateNavigation, {
+    passive: true
+  });
+
+  updateNavigation();
+})();
+</script>
+
