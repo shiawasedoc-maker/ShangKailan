@@ -753,3 +753,788 @@ if ('serviceWorker' in navigator) {
   document.head.appendChild(icon);
 })();
 </script>
+
+<style>
+/* Alternative table: Day 3 only */
+.day3-alt-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+  padding-bottom: 8px;
+}
+
+.day3-alt-wrap table {
+  width: max-content;
+  min-width: 760px;
+  max-width: none;
+}
+
+.day3-alt-wrap td.plan {
+  min-width: 250px;
+}
+
+.day3-alt-wrap td.image,
+.day3-alt-wrap th.image {
+  width: 90px;
+  min-width: 90px;
+}
+
+.day3-alt-wrap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.day3-alt-wrap::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 6px;
+}
+
+@media print {
+  .day3-alt-wrap {
+    overflow: visible;
+  }
+
+  .day3-alt-wrap table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const days = [...document.querySelectorAll('.day')];
+
+  const day3 = days.find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3 || day3.querySelector('.day3-alt-wrap')) return;
+
+  const section = document.createElement('div');
+
+  section.innerHTML = `
+    <div class="unused">
+      <h3>Alternative Plan — Lingyin รอบบ่าย</h3>
+      <p class="note">
+        ใช้เมื่อจอง Lingyin Temple + Feilai Peak รอบบ่ายได้
+        เลื่อนตารางซ้าย–ขวาบนมือถือได้
+      </p>
+    </div>
+
+    <div class="day3-alt-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>เวลา</th>
+            <th>แพลน</th>
+            <th class="image">ภาพ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="travel">
+            <td class="time">07:30–08:15</td>
+            <td class="plan">
+              <span class="duration">25–40 <sub>min</sub></span>
+              <span class="fare">¥30–50/คัน</span>
+              <span class="didi">DiDi / Taxi</span>
+              → Broken Bridge
+              <br>or<br>
+              <span class="duration">35–50 <sub>min</sub></span>
+              <span class="fare">¥4–8/คน</span>
+              Metro + WALK → Broken Bridge
+              <br><span class="note">จาก Hangzhou East Station</span>
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="sight">
+            <td class="time">08:15–08:45</td>
+            <td class="plan">Broken Bridge + West Lake</td>
+            <td class="image"><span class="rank s">S1</span></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time"></td>
+            <td class="plan">
+              <span class="duration">15–25 <sub>min</sub></span>
+              <span class="walk">WALK</span>
+              → Zhongshan Park Pier
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="sight">
+            <td class="time">09:10–10:30</td>
+            <td class="plan">
+              Three Pools Mirroring the Moon (三潭印月)
+              <br><span class="duration">60–80 <sub>min</sub></span>
+              <span class="fare">¥55–70/คน</span>
+              <br><span class="note">ตรวจสอบรอบเรือและท่าเรือก่อนซื้อตั๋ว</span>
+            </td>
+            <td class="image"><span class="rank s">S</span></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time"></td>
+            <td class="plan">
+              <span class="duration">5–15 <sub>min</sub></span>
+              <span class="walk">WALK</span>
+              → Huagang Park
+              <br><span class="fare">¥0</span>
+              <br><span class="note">ขึ้นกับท่าเรือปลายทางของเรือที่เลือก</span>
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="sight">
+            <td class="time">10:45–11:10</td>
+            <td class="plan">Viewing Fish at Flower Harbor (花港观鱼)</td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time">11:10–12:00</td>
+            <td class="plan">
+              <span class="duration">25–45 <sub>min</sub></span>
+              <span class="fare">¥25–40/คัน</span>
+              <span class="didi">DiDi / Taxi</span>
+              → Lingyin Temple
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="sight">
+            <td class="time">12:00–14:45</td>
+            <td class="plan">
+              Lingyin Temple + Feilai Peak
+              <br><span class="duration">2 hr 45 <sub>min</sub></span>
+              <br><span class="note">
+                ต้องยืนยันการจองและเวลาเข้าชมทั้งสองพื้นที่ก่อนเดินทาง
+              </span>
+            </td>
+            <td class="image"><span class="rank s">S2</span></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time"></td>
+            <td class="plan">
+              <span class="duration">25–45 <sub>min</sub></span>
+              <span class="fare">¥25–40/คัน</span>
+              <span class="didi">DiDi / Taxi</span>
+              → Leifeng Pagoda
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="sight">
+            <td class="time">15:30–16:15</td>
+            <td class="plan">
+              Leifeng Pagoda
+              <br><span class="duration">45 <sub>min</sub></span>
+              <span class="fare">ประมาณ ¥40/คน</span>
+            </td>
+            <td class="image"><span class="rank a">A</span></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time"></td>
+            <td class="plan">
+              <span class="duration">15–30 <sub>min</sub></span>
+              <span class="fare">¥20–35/คัน</span>
+              <span class="didi">DiDi / Taxi</span>
+              → Hefang Street
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="meal">
+            <td class="time">16:45–18:00</td>
+            <td class="plan">
+              Hefang Street
+              <br>เดินเที่ยว กินมื้อเย็น และซื้อของฝาก
+              <br><span class="fare">เข้าฟรี</span>
+            </td>
+            <td class="image"><span class="rank a">A2</span></td>
+          </tr>
+
+          <tr class="travel">
+            <td class="time">18:00–18:30</td>
+            <td class="plan">
+              <span class="duration">15–30 <sub>min</sub></span>
+              <span class="fare">¥20–35/คัน</span>
+              <span class="didi">DiDi / Taxi</span>
+              → Hangzhou Railway Station (杭州站)
+            </td>
+            <td class="image"></td>
+          </tr>
+
+          <tr class="luggage">
+            <td class="time">18:30–20:00</td>
+            <td class="plan">
+              ถึงสถานี ตรวจชานชาลา และเตรียมขึ้นรถไฟ
+              <br><span class="fare">รถไฟออก 20:00 น.</span>
+            </td>
+            <td class="image"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">
+      เวลาและค่าโดยสารเป็นค่าประมาณ ควรตรวจสอบการเดินทาง
+      รอบเรือ และเงื่อนไขจองสถานที่ก่อนออกเดินทาง
+    </p>
+  `;
+
+  day3.appendChild(section);
+})();
+</script>
+
+<style>
+/* Day 3 only: fit columns to content */
+.day:has(.day-title) {
+  --unused: 0;
+}
+
+.day3-alternative {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.day3-alternative table {
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  table-layout: auto;
+  font: 11px Arial, sans-serif;
+}
+
+.day3-alternative th,
+.day3-alternative td {
+  white-space: normal;
+  vertical-align: top;
+}
+
+.day3-alternative td.time {
+  white-space: nowrap;
+  min-width: 105px;
+}
+
+.day3-alternative td.plan {
+  min-width: 250px;
+  width: auto;
+}
+
+.day3-alternative td.image,
+.day3-alternative th.image {
+  width: 90px;
+  min-width: 90px;
+}
+
+/* Ranking badges */
+.day3-alternative .rank,
+.day3-ranking-fix .rank {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 2px;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 3px;
+}
+
+@media print {
+  .day3-alternative {
+    overflow: visible;
+  }
+
+  .day3-alternative table {
+    width: 100%;
+    min-width: 0;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const days = [...document.querySelectorAll('.day')];
+  const day3 = days.find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+  if (!day3) return;
+
+  // 1) Fix ranks in the original Day 3 table
+  const rankMap = [
+    ['Lingyin Temple', 'S2'],
+    ['Feilai Peak', 'S2'],
+    ['Broken Bridge', 'S1'],
+    ['Leifeng Pagoda', 'S3'],
+    ['Hefang Street', 'A2'],
+    ['Jingci Temple', 'D3']
+  ];
+
+  day3.querySelectorAll('tr.sight, tr.meal').forEach(row => {
+    if (row.closest('.day3-alternative')) return;
+    const plan = row.querySelector('.plan');
+    const image = row.querySelector('td.image');
+    if (!plan || !image) return;
+
+    const text = plan.textContent;
+    const ranks = [...new Set(
+      rankMap.filter(([keyword]) => text.includes(keyword))
+             .map(([, rank]) => rank)
+    )];
+
+    if (!ranks.length) return;
+
+    image.querySelectorAll('.rank').forEach(el => el.remove());
+
+    ranks.forEach(rank => {
+      const badge = document.createElement('span');
+      badge.className = 'rank ' + rank[0].toLowerCase();
+      badge.textContent = rank;
+      image.appendChild(badge);
+    });
+  });
+
+  // 2) Add lunch to the original plan if not already present
+  const originalTable = [...day3.querySelectorAll('table')]
+    .find(table => !table.closest('.day3-alternative'));
+
+  if (originalTable && !originalTable.querySelector('.day3-lunch-added')) {
+    const lunch = document.createElement('tr');
+    lunch.className = 'meal day3-lunch-added';
+    lunch.innerHTML = `
+      <td class="time">11:30–12:00</td>
+      <td class="plan">
+        Lunch — West Lake / Huagang area
+        <ul class="sublist">
+          <li><b>Nonveg:</b> ร้านอาหารจีนแถว Huagang — เลือกเมนูปลา/ไก่</li>
+          <li><b>Halfveg:</b> ร้านอาหารท้องถิ่น — สั่งผักและเต้าหู้เพิ่ม</li>
+          <li><b>Veg:</b> ร้านอาหารเจหรือมังสวิรัติที่ยืนยันได้ก่อนเดินทาง</li>
+        </ul>
+        <span class="note">
+          เวลาเป็นช่วงสำรอง หากคิวเรือหรือการเดินทางเปลี่ยนให้เลื่อนมื้ออาหารตามจริง
+        </span>
+      </td>
+      <td class="image"></td>
+    `;
+
+    const rows = [...originalTable.querySelectorAll('tbody tr')];
+    const insertBefore = rows.find(row =>
+      row.querySelector('.plan')?.textContent.includes('Lingyin Temple')
+    );
+
+    if (insertBefore) {
+      originalTable.querySelector('tbody')
+        .insertBefore(lunch, insertBefore);
+    }
+  }
+
+  // 3) Add lunch to the alternative table
+  const alt = day3.querySelector('.day3-alternative table');
+  if (alt && !alt.querySelector('.day3-lunch-added')) {
+    const lunch = document.createElement('tr');
+    lunch.className = 'meal day3-lunch-added';
+    lunch.innerHTML = `
+      <td class="time">11:10–11:40</td>
+      <td class="plan">
+        Lunch — Huagang / West Lake
+        <ul class="sublist">
+          <li><b>Nonveg:</b> ร้านอาหารใกล้ Huagang — เลือกเมนูปลา/ไก่</li>
+          <li><b>Halfveg:</b> ร้านอาหารจีน — ผัก เต้าหู้ และข้าว</li>
+          <li><b>Veg:</b> ร้านอาหารเจ/มังสวิรัติที่ตรวจสอบแล้ว</li>
+        </ul>
+        <span class="note">
+          กินแบบรวดเร็วเพื่อเดินทางไป Lingyin ตามรอบจอง
+        </span>
+      </td>
+      <td class="image"></td>
+    `;
+
+    const rows = [...alt.querySelectorAll('tbody tr')];
+    const insertBefore = rows.find(row =>
+      row.querySelector('.plan')?.textContent.includes('Lingyin Temple')
+    );
+
+    if (insertBefore) {
+      alt.querySelector('tbody').insertBefore(lunch, insertBefore);
+    }
+  }
+})();
+</script>
+
+
+<style>
+/* FIX: Day 3 Alternative horizontal scroll */
+.day3-alt-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.day3-alt-wrap table {
+  width: max-content;
+  min-width: 760px;
+  max-width: none;
+  table-layout: auto;
+}
+
+.day3-alt-wrap td.time {
+  min-width: 105px;
+  white-space: nowrap;
+}
+
+.day3-alt-wrap td.plan {
+  min-width: 250px;
+}
+
+.day3-alt-wrap td.image,
+.day3-alt-wrap th.image {
+  width: 90px;
+  min-width: 90px;
+}
+
+/* Ranking number visibility */
+.day .rank {
+  display: inline-block;
+  padding: 2px 5px;
+  margin-right: 3px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media print {
+  .day3-alt-wrap {
+    overflow: visible;
+  }
+
+  .day3-alt-wrap table {
+    min-width: 0;
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const day3 = [...document.querySelectorAll('.day')].find(day =>
+    day.querySelector('.day-title')
+      ?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3) return;
+
+  // 1. Fix ranking numbers in both Day 3 tables
+  const rankings = [
+    ['Lingyin Temple', 'S2'],
+    ['Feilai Peak', 'S2'],
+    ['Broken Bridge', 'S1'],
+    ['Leifeng Pagoda', 'S3'],
+    ['Hefang Street', 'A2'],
+    ['Jingci Temple', 'D3']
+  ];
+
+  day3.querySelectorAll('tr.sight, tr.meal').forEach(row => {
+    const plan = row.querySelector('.plan');
+    const image = row.querySelector('td.image');
+
+    if (!plan || !image) return;
+
+    const matches = rankings.filter(([keyword]) =>
+      plan.textContent.includes(keyword)
+    );
+
+    if (!matches.length) return;
+
+    image.querySelectorAll('.rank').forEach(el => el.remove());
+
+    [...new Set(matches.map(([, rank]) => rank))].forEach(rank => {
+      const badge = document.createElement('span');
+      badge.className = 'rank ' + rank[0].toLowerCase();
+      badge.textContent = rank;
+      image.appendChild(badge);
+    });
+  });
+
+  // 2. Fix Alternative table selector
+  const altTable = day3.querySelector('.day3-alt-wrap table');
+
+  // 3. Add lunch only if missing
+  function addLunch(table, time, title) {
+    if (!table || table.querySelector('.day3-lunch-fix')) return;
+
+    const lunch = document.createElement('tr');
+    lunch.className = 'meal day3-lunch-fix';
+
+    lunch.innerHTML = `
+      <td class="time">${time}</td>
+      <td class="plan">
+        ${title}
+        <ul class="sublist">
+          <li><b>Nonveg:</b> ร้านอาหารจีน เลือกเมนูไก่หรือปลา</li>
+          <li><b>Halfveg:</b> ข้าว ผัก และเต้าหู้</li>
+          <li><b>Veg:</b> ร้านอาหารเจหรือมังสวิรัติที่ตรวจสอบแล้ว</li>
+        </ul>
+        <span class="note">
+          ตรวจสอบร้าน เวลาเปิด และตัวเลือกอาหารก่อนเดินทาง
+        </span>
+      </td>
+      <td class="image"></td>
+    `;
+
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    // Insert before the first Lingyin visit
+    const lingyin = [...tbody.querySelectorAll('tr')].find(row =>
+      row.querySelector('.plan')?.textContent.includes('Lingyin Temple')
+    );
+
+    if (lingyin) {
+      tbody.insertBefore(lunch, lingyin);
+    } else {
+      tbody.appendChild(lunch);
+    }
+  }
+
+  const mainTable = [...day3.querySelectorAll('table')].find(table =>
+    !table.closest('.day3-alt-wrap')
+  );
+
+  addLunch(
+    mainTable,
+    '11:30–12:00',
+    'Lunch — West Lake / Huagang area'
+  );
+
+  addLunch(
+    altTable,
+    '11:10–11:40',
+    'Lunch — Huagang / West Lake'
+  );
+})();
+</script>
+
+<style>
+/* Day 3 Alternative: fit content, no forced blank space */
+.day3-alt-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.day3-alt-wrap table {
+  width: max-content !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  table-layout: auto !important;
+}
+
+.day3-alt-wrap th,
+.day3-alt-wrap td {
+  padding: 6px 8px;
+  vertical-align: top;
+}
+
+.day3-alt-wrap th:first-child,
+.day3-alt-wrap td.time {
+  width: 1%;
+  min-width: 0 !important;
+  white-space: nowrap;
+}
+
+.day3-alt-wrap th:nth-child(2),
+.day3-alt-wrap td.plan {
+  width: auto;
+  min-width: 0 !important;
+  max-width: none !important;
+  overflow-wrap: normal;
+}
+
+.day3-alt-wrap td.plan {
+  white-space: normal;
+}
+
+.day3-alt-wrap th.image,
+.day3-alt-wrap td.image {
+  width: 90px;
+  min-width: 90px;
+  white-space: nowrap;
+}
+
+@media print {
+  .day3-alt-wrap {
+    overflow: visible;
+  }
+
+  .day3-alt-wrap table {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const day3 = [...document.querySelectorAll('.day')].find(day =>
+    day.querySelector('.day-title')?.textContent.includes('Hangzhou')
+  );
+
+  if (!day3) return;
+
+  const altWrap = day3.querySelector('.day3-alt-wrap');
+  const tables = [...day3.querySelectorAll('table')];
+  const originalTable = tables.find(t => !t.closest('.day3-alt-wrap'));
+  const altTable = altWrap?.querySelector('table');
+
+  // Make sure only the alternative table scrolls horizontally.
+  if (altWrap) {
+    altWrap.style.width = '100%';
+    altWrap.style.maxWidth = '100%';
+    altWrap.style.overflowX = 'auto';
+
+    if (altTable) {
+      altTable.style.width = 'max-content';
+      altTable.style.minWidth = '0';
+      altTable.style.maxWidth = 'none';
+      altTable.style.tableLayout = 'auto';
+    }
+  }
+
+  // Insert/update lunch at its chronological position.
+  function setLunch(table, id, time, title, insertBeforeText) {
+    if (!table) return;
+
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    let lunch = tbody.querySelector('[data-lunch-fix="' + id + '"]');
+
+    if (!lunch) {
+      lunch = document.createElement('tr');
+      lunch.className = 'meal';
+      lunch.dataset.lunchFix = id;
+      lunch.innerHTML =
+        '<td class="time"></td><td class="plan"></td><td class="image"></td>';
+    }
+
+    lunch.querySelector('.time').textContent = time;
+
+    lunch.querySelector('.plan').innerHTML = `
+      <strong>${title}</strong>
+      <ul class="sublist">
+        <li><strong>ตัวเลือก 1:</strong> 知味观 (Zhiweiguan) — ร้านอาหารหางโจวชื่อดัง เลือกของกินเล่นหรือเสี่ยวหลงเปาตามงบ</li>
+        <li><strong>ตัวเลือก 2:</strong> ร้านบะหมี่ท้องถิ่นใกล้ตำแหน่งปัจจุบัน — มื้อเร็ว คุมงบได้</li>
+        <li><strong>ตัวเลือก 3:</strong> ร้านอาหารในโซน West Lake / Huagang — เลือกร้านที่คิวสั้นที่สุด</li>
+      </ul>
+      <span class="note">ตั้งเป้ากิน 25–30 นาที หากคิวยาวให้เปลี่ยนร้านทันที เพื่อไม่ให้กระทบรถไฟ 20:00 น. ชื่อสาขาและเวลาเปิดควรตรวจสอบก่อนเดินทาง</span>
+    `;
+
+    lunch.querySelector('.image').innerHTML = '';
+
+    // Remove duplicate lunch rows created by previous snippets.
+    [...tbody.querySelectorAll('tr.meal')].forEach(row => {
+      if (row === lunch) return;
+      if (row.dataset.lunchFix) {
+        row.remove();
+        return;
+      }
+
+      const text = row.querySelector('.plan')?.textContent || '';
+      if (/Lunch — West Lake|Lunch — Huagang|Lunch choices/.test(text)) {
+        row.remove();
+      }
+    });
+
+    // Always insert before the chronological anchor, never append by default.
+    const anchor = [...tbody.querySelectorAll('tr')].find(row =>
+      row !== lunch &&
+      (row.querySelector('.plan')?.textContent || '').includes(insertBeforeText)
+    );
+
+    if (anchor) {
+      tbody.insertBefore(lunch, anchor);
+    } else {
+      // Fallback: sort timed rows chronologically.
+      const allRows = [...tbody.querySelectorAll('tr')];
+      const minutes = row => {
+        const value = row.querySelector('.time')?.textContent || '';
+        const match = value.match(/(\d{1,2}):(\d{2})/);
+        return match ? Number(match[1]) * 60 + Number(match[2]) : Infinity;
+      };
+
+      const next = allRows.find(row => minutes(row) > minutes(lunch));
+      if (next) tbody.insertBefore(lunch, next);
+      else tbody.appendChild(lunch);
+    }
+  }
+
+  // Original plan: lunch after Huagang, before Leifeng Pagoda.
+  setLunch(
+    originalTable,
+    'original',
+    '13:00–13:30',
+    'Lunch — West Lake / Huagang area',
+    'Leifeng Pagoda'
+  );
+
+  // Alternative plan: lunch before the Lingyin visit.
+  setLunch(
+    altTable,
+    'alternative',
+    '11:10–11:40',
+    'Lunch — ก่อนเดินทางไป Lingyin Temple',
+    'Lingyin Temple'
+  );
+
+  // Restore numeric rank labels in Day 3 only.
+  const rankMap = [
+    ['Lingyin Temple', 'S2'],
+    ['Feilai Peak', 'S2'],
+    ['Broken Bridge', 'S1'],
+    ['Leifeng Pagoda', 'S3'],
+    ['Hefang Street', 'A2'],
+    ['Jingci Temple', 'D3']
+  ];
+
+  [originalTable, altTable].filter(Boolean).forEach(table => {
+    table.querySelectorAll('tr.sight, tr.meal').forEach(row => {
+      const plan = row.querySelector('.plan');
+      const image = row.querySelector('.image');
+      if (!plan || !image) return;
+
+      const matches = [...new Set(
+        rankMap
+          .filter(([keyword]) => plan.textContent.includes(keyword))
+          .map(([, rank]) => rank)
+      )];
+
+      if (!matches.length) return;
+
+      image.querySelectorAll('.rank').forEach(el => el.remove());
+
+      matches.forEach(rank => {
+        const badge = document.createElement('span');
+        badge.className = 'rank ' + rank[0].toLowerCase();
+        badge.textContent = rank;
+        image.appendChild(badge);
+      });
+    });
+  });
+})();
+</script>
+
